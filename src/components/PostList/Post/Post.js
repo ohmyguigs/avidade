@@ -6,7 +6,7 @@ class Post extends React.Component {
   render() {
     const { backgroundColor } = this.props;
     return (
-      <div className="Post col-lg-4" style={{backgroundColor: backgroundColor}}>
+      <div className="Post col-xs-12 col-sm-12 col-md-4" style={{backgroundColor: backgroundColor}}>
         <div className="Post__footer">
           <hr/>
           <p className="Post__footer--text">facebook/avidade</p>
