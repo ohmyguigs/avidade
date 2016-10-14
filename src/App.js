@@ -4,6 +4,8 @@ import Footer from './components/Footer/Footer';
 import PostList from './components/PostList/PostList';
 import './App.less';
 
+import EditorStore from './stores/EditorStore';
+
 class App extends React.Component {
   componentWillMount() {
     const names = [
@@ -103,7 +105,7 @@ class App extends React.Component {
     setTimeout(() => {
       this.shuffleNames(Math.floor((Math.random() * posts.length) + 0));
     }, Math.floor((Math.random() * 200) + 100));
-  };
+  }
 
   render() {
     return (
