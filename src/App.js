@@ -87,7 +87,6 @@ class App extends React.Component {
   }
 
   shuffleNames = (id = 7) => {
-    console.log('enter');
     const { names, posts } = this.state;
 
     let newPosts = posts.map((post) => {
