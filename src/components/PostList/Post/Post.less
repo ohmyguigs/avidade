@@ -1,8 +1,9 @@
 .Post {
   margin: 20px;
   color: white;
-  width: 30%;
-  height: 250px;
+  width: 300px;
+  height: 300px;
+  position: relative;
 
   .Post__name {
     margin: 20px 15px 0 15px;
@@ -10,5 +11,15 @@
 
   .Post__text {
     margin: 0 0 0 15px;
+  }
+
+  .Post__footer {
+    position: absolute;
+    bottom: 0px;
+    width: 270px;
+
+    .Post__footer--text {
+      margin-top: -15px;
+    }
   }
 }
