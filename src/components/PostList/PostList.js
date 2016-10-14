@@ -11,7 +11,6 @@ class PostList extends React.Component {
         <div key={index}>
           <Post
             {...post}
-            increaseLike={this.props.increaseLike}
           />
         </div>
       );
@@ -19,12 +18,6 @@ class PostList extends React.Component {
 
     return (
       <div className="PostList row">
-        {
-          previewPost && previewPost.post.length > 0 ?
-            <Post
-              {...previewPost}
-            /> : null
-        }
         { posts }
       </div>
     );

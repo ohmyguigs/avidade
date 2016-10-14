@@ -1,29 +1,24 @@
 import React from 'react';
 import './Post.less';
-import Like from './Like/Like';
 
 class Post extends React.Component {
-  increaseLike = () => {
-    this.props.increaseLike(this.props.id);
-  };
 
   render() {
+    const { backgroundColor } = this.props;
     return (
-      <div className="Post col-lg-4">
+      <div className="Post col-lg-4" style={{backgroundColor: backgroundColor}}>
         <div className="row">
           <div className="col-lg-8">
             <h2 className="Post__name">
-              { this.props.name + ' ' + this.props.post}
+              { this.props.name }
             </h2>
+            <h2 className="Post__text">
+              { this.props.post }
+            </h2>
+            <hr/>
+            <p>/avidade</p>
           </div>
         </div>
-        {
-          this.props.increaseLike ?
-            <Like
-              likes={this.props.likes}
-              increaseLike={this.increaseLike}
-            /> : null
-        }
       </div>
     );
   };

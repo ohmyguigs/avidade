@@ -10,37 +10,69 @@ class App extends React.Component {
       'Eduarda',
       'Bernardo',
       'Rafael',
+      'Juliana',
       'Glauber',
       'Gabriel',
       'Jussara',
       'Carolina',
       'Geovana',
-      'Michel'
+      'Michel',
+      'Joelson'
     ];
     const posts = [
       {
         id: 0,
         name: 'Geovana',
         post: 'deixa forninhos cairem',
-        likes: 100
+        backgroundColor: '#FFB840'
       },
       {
         id: 1,
         name: 'Sibelius',
         post: 'come coisa estragada',
-        likes: 1
+        backgroundColor: '#FF925B'
       },
       {
         id: 2,
-        name: 'Thor',
+        name: 'Joelson',
         post: 'ainda brinca de pique-pega',
-        likes: 0
+        backgroundColor: '#FF695B'
       },
       {
         id: 3,
-        name: 'Guido',
+        name: 'Michel',
         post: 'gosta de nadar sem roupa',
-        likes: 2
+        backgroundColor: '#4BBF51'
+      },
+      {
+        id: 3,
+        name: 'Carolina',
+        post: 'faz a unha e depois estraga tudo no zipper',
+        backgroundColor: '#48B895'
+      },
+      {
+        id: 3,
+        name: 'Jussara',
+        post: 'come carboidrato depois das seis',
+        backgroundColor: '#32ACD0'
+      },
+      {
+        id: 3,
+        name: 'Juliana',
+        post: 'paga a academia mas nunca vai',
+        backgroundColor: '#E461DF'
+      },
+      {
+        id: 3,
+        name: 'Glauber',
+        post: 'não nega um gole de xiboquinha',
+        backgroundColor: '#9C70D4'
+      },
+      {
+        id: 3,
+        name: 'Edimilson',
+        post: 'faz vergonha na pelada toda vez',
+        backgroundColor: '#5A8EDF'
       }
     ];
 
@@ -53,22 +85,6 @@ class App extends React.Component {
   componentDidMount() {
     this.shuffleNames();
   }
-
-  increaseLike = (id) => {
-    const currentPosts = this.state.posts;
-    const post = currentPosts[id];
-    const clonedPost = {
-      ...post,
-      likes: post.likes + 1
-    };
-    const posts = [
-      ...currentPosts.slice(0, id),
-      clonedPost,
-      ...currentPosts.slice(id + 1)
-    ];
-
-    this.setState({ posts });
-  };
 
   shuffleNames = () => {
     const { names, posts } = this.state;
@@ -89,7 +105,6 @@ class App extends React.Component {
         <Header />
         <PostList
           {...this.state}
-          increaseLike={this.increaseLike}
         />
       </div>
     );
