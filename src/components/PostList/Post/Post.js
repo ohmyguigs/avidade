@@ -1,24 +1,28 @@
 import React from 'react';
 import './Post.less';
+import ReactFitText from 'react-fittext';
 
 class Post extends React.Component {
 
   render() {
     const { backgroundColor } = this.props;
     return (
-      <div className="Post col-lg-4" style={{backgroundColor: backgroundColor}}>
-        <div className="Post__footer">
-          <hr/>
-          <p className="Post__footer--text">facebook/avidade</p>
-        </div>
-        <div className="row">
-          <div className="col-lg-8">
-            <h2 className="Post__name">
-              { this.props.name }
-            </h2>
-            <h2 className="Post__text">
-              { this.props.post }
-            </h2>
+      <div className="Post" style={{backgroundColor: backgroundColor}}>
+        <div className="Post__box">
+          <div className="Post__box--content">
+              <ReactFitText compressor={0.75} minFontSize={25}>
+                <h2 className="Post__name" >
+                  { this.props.name }
+                </h2>
+              </ReactFitText>
+              <ReactFitText compressor={0.75} minFontSize={25}>
+                <h2 className="Post__text">
+                  { this.props.post }
+                </h2>
+              </ReactFitText>
+                <div className="Post__footer">
+                  <p className="Post__footer--text">facebook/avidade</p>
+                </div>
           </div>
         </div>
       </div>
