@@ -9,6 +9,10 @@ import EditorStore from './stores/EditorStore';
 class App extends React.Component {
   componentWillMount() {
     const names = [
+      'Robson',
+      'Robson',
+      'Robson',
+      'Robson',
       'Sibelius',
       'Cleyton',
       'Eduarda',
