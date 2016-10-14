@@ -9,24 +9,12 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div className="Post">
+      <div className="Post col-lg-4">
         <div className="row">
           <div className="col-lg-8">
             <h2 className="Post__name">
-              { this.props.name }
+              { this.props.name + ' ' + this.props.post}
             </h2>
-          </div>
-          <div className="col-lg-4">
-            <span className="Post__date pull-right">
-              { this.props.postedAt }
-            </span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12">
-            <span className="Post__text">
-              { this.props.post }
-            </span>
           </div>
         </div>
         {

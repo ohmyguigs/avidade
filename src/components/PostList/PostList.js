@@ -9,7 +9,6 @@ class PostList extends React.Component {
     const posts = reversedPosts.map((post, index) => {
       return (
         <div key={index}>
-          <hr />
           <Post
             {...post}
             increaseLike={this.props.increaseLike}
@@ -20,15 +19,13 @@ class PostList extends React.Component {
 
     return (
       <div className="PostList row">
-        <div className="col-lg-8 col-lg-offset-2">
-          {
-            previewPost && previewPost.post.length > 0 ?
-              <Post
-                {...previewPost}
-              /> : null
-          }
-          { posts }
-        </div>
+        {
+          previewPost && previewPost.post.length > 0 ?
+            <Post
+              {...previewPost}
+            /> : null
+        }
+        { posts }
       </div>
     );
   };

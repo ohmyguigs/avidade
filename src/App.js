@@ -1,60 +1,58 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import PostArea from './components/PostArea/PostArea';
 import PostList from './components/PostList/PostList';
 
 class App extends React.Component {
   componentWillMount() {
+    const names = [
+      'Sibelius',
+      'Cleyton',
+      'Eduarda',
+      'Bernardo',
+      'Rafael',
+      'Glauber',
+      'Gabriel',
+      'Jussara',
+      'Carolina',
+      'Geovana',
+      'Michel'
+    ];
     const posts = [
       {
         id: 0,
         name: 'Geovana',
-        post: 'eita, forninho caiu...',
-        postedAt: '01/03/2015',
+        post: 'deixa forninhos cairem',
         likes: 100
       },
       {
         id: 1,
-        name: 'Tomattos',
-        post: 'Sua mãe tá doente ):',
-        postedAt: '16/02/2016',
+        name: 'Sibelius',
+        post: 'come coisa estragada',
         likes: 1
       },
       {
         id: 2,
         name: 'Thor',
-        post: 'Qiss comofas reasct',
-        postedAt: '16/0/2016',
+        post: 'ainda brinca de pique-pega',
         likes: 0
       },
       {
         id: 3,
-        name: 'Guigs',
-        post: 'Olar amigors :)',
-        postedAt: '16/02/2016',
+        name: 'Guido',
+        post: 'gosta de nadar sem roupa',
         likes: 2
       }
     ];
 
     this.setState({
       posts,
-      previewPost: null
+      names
     });
   }
 
-  addPost = (post) => {
-    const lastPostIndex = this.state.posts.length - 1;
-    const clonedPost = {
-      id: this.state.posts[lastPostIndex].id + 1,
-      ...post
-    };
-    const posts = [
-      ...this.state.posts,
-      clonedPost
-    ];
-
-    this.setState({ posts });
-  };
+  componentDidMount() {
+    this.shuffleNames();
+  }
 
   increaseLike = (id) => {
     const currentPosts = this.state.posts;
@@ -72,18 +70,23 @@ class App extends React.Component {
     this.setState({ posts });
   };
 
-  updatePreviewPost = (previewPost) => {
-    this.setState({ previewPost });
+  shuffleNames = () => {
+    const { names, posts } = this.state;
+
+    let newPosts = posts.map((post) => {
+      post.name = names[Math.floor((Math.random() * names.length) + 0)];
+      return post;
+    });
+    this.setState({posts: newPosts});
+    setTimeout(() => {
+      this.shuffleNames()
+    }, 1200);
   };
 
   render() {
     return (
       <div className="container-fluid">
         <Header />
-        <PostArea
-          addPost={this.addPost}
-          updatePreviewPost={this.updatePreviewPost}
-        />
         <PostList
           {...this.state}
           increaseLike={this.increaseLike}
