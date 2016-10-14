@@ -18,7 +18,9 @@ class PostList extends React.Component {
 
     return (
       <div className="PostList container">
-        { posts }
+        <div class="row">
+          { posts }
+        </div>
       </div>
     );
   };
