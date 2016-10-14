@@ -13,7 +13,7 @@ class Post extends React.Component {
         </div>
         <div className="row">
           <div className="col-lg-8">
-            <h2 className="Post__name">
+            <h2 className="Post__name"> 
               { this.props.name }
             </h2>
             <h2 className="Post__text">
