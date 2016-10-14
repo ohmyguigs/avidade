@@ -45,31 +45,31 @@ class App extends React.Component {
         backgroundColor: '#4BBF51'
       },
       {
-        id: 3,
+        id: 4,
         name: 'Carolina',
         post: 'faz a unha e depois estraga tudo no zipper',
         backgroundColor: '#48B895'
       },
       {
-        id: 3,
+        id: 5,
         name: 'Jussara',
         post: 'come carboidrato depois das seis',
         backgroundColor: '#32ACD0'
       },
       {
-        id: 3,
+        id: 6,
         name: 'Juliana',
         post: 'paga a academia mas nunca vai',
         backgroundColor: '#E461DF'
       },
       {
-        id: 3,
+        id: 7,
         name: 'Glauber',
         post: 'não nega um gole de xiboquinha',
         backgroundColor: '#9C70D4'
       },
       {
-        id: 3,
+        id: 8,
         name: 'Edimilson',
         post: 'faz vergonha na pelada toda vez',
         backgroundColor: '#5A8EDF'
@@ -86,17 +86,22 @@ class App extends React.Component {
     this.shuffleNames();
   }
 
-  shuffleNames = () => {
+  shuffleNames = (id = 7) => {
+    console.log('enter');
     const { names, posts } = this.state;
 
     let newPosts = posts.map((post) => {
-      post.name = names[Math.floor((Math.random() * names.length) + 0)];
+      if (post.id === id) {
+        post.name = names[Math.floor((Math.random() * names.length) + 0)];
+      }
       return post;
     });
+
     this.setState({posts: newPosts});
+
     setTimeout(() => {
-      this.shuffleNames()
-    }, 1200);
+      this.shuffleNames(Math.floor((Math.random() * posts.length) + 0));
+    }, Math.floor((Math.random() * 200) + 100));
   };
 
   render() {
