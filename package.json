@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "react": "^15.3.2",
+    "react-color": "^2.3.4",
     "react-dom": "^15.0.0",
     "react-fittext": "git+https://github.com/gianu/react-fittext.git"
   }
