@@ -86,12 +86,22 @@ class App extends React.Component {
 
     this.setState({
       posts,
-      names
+      names,
+      isEditing: false
     });
   }
 
   componentDidMount() {
     this.shuffleNames();
+    EditorStore.listen(this.onChange);
+  }
+
+  componentWillUnmount() {
+    EditorStore.unlisten(this.onChange);
+  }
+
+  onChange = (state) => {
+    this.setState({isEditing: state.isEditing});
   }
 
   shuffleNames = (id = 7) => {
@@ -115,9 +125,11 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <Header />
-        <PostList
-          {...this.state}
-        />
+        {this.state.isEditing ? '' :
+          <PostList
+            {...this.state}
+          />
+        }
         <Footer />
       </div>
     );

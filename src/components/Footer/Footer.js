@@ -4,7 +4,7 @@ import './Footer.less';
 
 class Footer extends React.Component {
   showEditor = () => {
-    EditorActions.showEditor();
+    EditorActions.toggleEditor();
   }
 
   render() {

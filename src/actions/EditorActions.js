@@ -1,8 +1,7 @@
 import flux from '../flux';
 
 class EditorActions {
-  showEditor() {
-    console.log('AGORA SIM');
+  toggleEditor() {
     return (dispatch) => {
       dispatch();
     };

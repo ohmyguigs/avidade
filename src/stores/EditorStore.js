@@ -3,13 +3,14 @@ import EditorActions from '../actions/EditorActions';
 
 class EditorStore {
   constructor() {
+    this.isEditing = false;
     this.bindListeners({
-      onShowEditor: EditorActions.SHOW_EDITOR
+      onToggleEditor: EditorActions.TOGGLE_EDITOR
     });
   }
 
-  onShowEditor() {
-    console.log('EITA STORE');
+  onToggleEditor() {
+    this.isEditing = !this.isEditing;
   }
 }
 
