@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import PostList from './components/PostList/PostList';
+import Editor from './components/Editor/Editor';
 import './App.less';
 
 import EditorStore from './stores/EditorStore';
@@ -125,10 +126,10 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <Header />
-        {this.state.isEditing ? '' :
-          <PostList
-            {...this.state}
-          />
+        {this.state.isEditing ?
+          <Editor />
+          :
+          <PostList {...this.state} />
         }
         <Footer />
       </div>
