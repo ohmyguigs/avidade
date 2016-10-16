@@ -15,7 +15,14 @@ import './Footer.less';
             f / avidadequem
           </p>
           <a onClick={this.showEditor} className="Footer__title--btn btn btn__cta text-center col-xs-12 col-md-4">
-            Compartilhe o Seu <i className="glyphicon glyphicon-arrow-up"></i>
+            Compartilhe o Seu
+            {
+              this.props.isEditing ?
+              <i className="glyphicon glyphicon-arrow-down"></i>
+              :
+              <i className="glyphicon glyphicon-arrow-up"></i>
+
+            }
           </a>
 
           <p className="Footer__title--love text-right hidden-sm hidden-xs col-md-4">

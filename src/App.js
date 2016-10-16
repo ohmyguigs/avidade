@@ -16,7 +16,7 @@ class App extends React.Component {
       'Robson',
       'Robson',
       'Sibelius',
-      'Cleyton',
+      'Clayton',
       'Eduarda',
       'Bernardo',
       'Rafael',
@@ -133,7 +133,7 @@ class App extends React.Component {
           :
           <PostList {...this.state} />
         }
-        <Footer />
+        <Footer isEditing={this.state.isEditing} />
       </div>
     );
   };
