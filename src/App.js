@@ -125,8 +125,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="Wrapper container-fluid">
+      <div className="Wrapper container">
         <Header />
+        <Headline />
         {this.state.isEditing ?
           <Editor />
           :
