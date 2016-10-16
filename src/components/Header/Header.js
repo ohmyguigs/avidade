@@ -7,7 +7,7 @@ class Header extends React.Component {
       <div className="Header container">
         <div>
           <h3 className="Header__brand">
-            Avidade
+            Avidade / Quem ?
           </h3>
           <div className="Header__nav">
             <a href="#" className="Header__option">
@@ -16,8 +16,8 @@ class Header extends React.Component {
             <a href="#" className="Header__option">
               Top Nomes
             </a>
-            <a href="#" className="Header__option btn btn__cta">
-              Crie seu próprio
+            <a onClick={this.showEditor} className="Footer__title btn btn__cta">
+              Crie o Seu Próprio <i className="glyphicon glyphicon-arrow-up"></i>
             </a>
           </div>
         </div>

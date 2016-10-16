@@ -1,6 +1,30 @@
 body{
   background: #4C5A55;
   color: white;
-  
+
   font-family: 'Montserrat', sans-serif;
+
+  .Wrapper{
+    padding-bottom: 120px;
+  }
+
+  .btn__cta {
+    background: white;
+    color: #4C5A55;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 40px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    &:hover{
+      box-shadow: 0px -1px 5px (rgba(0, 0, 0, 0.5));
+    }
+  }
+  // Variables
+  @import './assets/fb-icon.png';
+
+  .glyphicon__facebook{
+    background: url('@{images}');
+  }
+
 }

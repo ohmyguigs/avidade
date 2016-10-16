@@ -30,17 +30,22 @@ class Editor extends React.Component {
     return (
       <div className="Editor">
         <div className="Editor__canvas container">
-          <Post className="Editor__post"
-                name={this.state.name}
-                post={this.state.post}
-                backgroundColor={this.state.backgroundColor} />
-          <CirclePicker className="Editor__picker" onChange={this.colorChange.bind(this)} colors={colors} width="220"  />
-          <div className="Editor__inputs">
-            Robson: <input value={this.state.name} onChange={this.nameChange} type="text" className="Editor__inputs--nome" />
-            Vida:
-            <textarea cols="15" rows="5" value={this.state.post} onChange={this.postChange} type="text" className="Editor__inputs--post">
-            </textarea>
+
+          <div className="col-xs-12 col-lg-4">
+            <Post className="Editor__post col-lg-12"
+                  name={this.state.name}
+                  post={this.state.post}
+                  backgroundColor={this.state.backgroundColor} />
+            <div class="clearfix"></div>
+            <CirclePicker className="Editor__picker" onChange={this.colorChange.bind(this)} colors={colors}/>
           </div>
+          <form className="Editor__inputs form-group col-xm-12 col-sm-12 col-lg-8">
+            <label for="cardname">Nome:</label>
+            <input value={this.state.name} onChange={this.nameChange} type="text" className="Editor__inputs--nome form-control" />
+            <label for="cardtext">Texto:</label>
+            <textarea cols="15" rows="5" value={this.state.post} onChange={this.postChange} type="text" className="Editor__inputs--post form-control">
+            </textarea>
+          </form>
         </div>
       </div>
     );

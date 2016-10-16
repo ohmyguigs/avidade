@@ -21,7 +21,9 @@ class Post extends React.Component {
                 </h2>
               </ReactFitText>
                 <div className="Post__footer">
-                  <p className="Post__footer--text">facebook/avidade</p>
+                  <ReactFitText compressor={3} minFontSize={18}>
+                    <p className="Post__footer--text"><i class="glyphicon__facebook">f</i> / avidadequem</p>
+                  </ReactFitText>
                 </div>
           </div>
         </div>

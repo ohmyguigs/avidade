@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import PostList from './components/PostList/PostList';
 import Editor from './components/Editor/Editor';
+import Headline from './components/Headline/Headline';
 import './App.less';
 
 import EditorStore from './stores/EditorStore';
@@ -124,7 +125,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="Wrapper container-fluid">
         <Header />
         {this.state.isEditing ?
           <Editor />
