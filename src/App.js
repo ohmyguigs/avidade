@@ -1,13 +1,22 @@
 import React from 'react';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import PostList from './components/PostList/PostList';
+import Editor from './components/Editor/Editor';
+import Headline from './components/Headline/Headline';
 import './App.less';
+
+import EditorStore from './stores/EditorStore';
 
 class App extends React.Component {
   componentWillMount() {
     const names = [
+      'Robson',
+      'Robson',
+      'Robson',
+      'Robson',
       'Sibelius',
-      'Cleyton',
+      'Clayton',
       'Eduarda',
       'Bernardo',
       'Rafael',
@@ -79,12 +88,22 @@ class App extends React.Component {
 
     this.setState({
       posts,
-      names
+      names,
+      isEditing: false
     });
   }
 
   componentDidMount() {
     this.shuffleNames();
+    EditorStore.listen(this.onChange);
+  }
+
+  componentWillUnmount() {
+    EditorStore.unlisten(this.onChange);
+  }
+
+  onChange = (state) => {
+    this.setState({isEditing: state.isEditing});
   }
 
   shuffleNames = (id = 7) => {
@@ -102,15 +121,19 @@ class App extends React.Component {
     setTimeout(() => {
       this.shuffleNames(Math.floor((Math.random() * posts.length) + 0));
     }, Math.floor((Math.random() * 200) + 100));
-  };
+  }
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="Wrapper container">
         <Header />
-        <PostList
-          {...this.state}
-        />
+        <Headline />
+        {this.state.isEditing ?
+          <Editor />
+          :
+          <PostList {...this.state} />
+        }
+        <Footer isEditing={this.state.isEditing} />
       </div>
     );
   };

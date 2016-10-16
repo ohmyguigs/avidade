@@ -7,8 +7,8 @@ class Post extends React.Component {
   render() {
     const { backgroundColor } = this.props;
     return (
-      <div className="Post" style={{backgroundColor: backgroundColor}}>
-        <div className="Post__box">
+      <div className="Post col-xs-12 col-sm-6 col-md-4">
+        <div className="Post__box" style={{backgroundColor: backgroundColor}}>
           <div className="Post__box--content">
               <ReactFitText compressor={0.75} minFontSize={25}>
                 <h2 className="Post__name" >
@@ -21,7 +21,9 @@ class Post extends React.Component {
                 </h2>
               </ReactFitText>
                 <div className="Post__footer">
-                  <p className="Post__footer--text">facebook/avidade</p>
+                  <ReactFitText compressor={3} minFontSize={18}>
+                    <p className="Post__footer--text"><i className="glyphicon__fb">f</i> / avidadequem</p>
+                  </ReactFitText>
                 </div>
           </div>
         </div>

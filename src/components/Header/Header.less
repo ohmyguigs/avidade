@@ -1,20 +1,43 @@
 .Header {
   position: relative;
-  color: white;
-  height: 100px;
-  padding: 30px;
+  background: transparent;
+  border: 0;
+  height: 90px;
+  padding: 30px 10px;
 
-  .Header__brand {
+  .Header__bar{
     vertical-align: middle;
-    float: left;
+    // float: left;
+    .navbar-toggle{
+      background: transparent;
+      border: 2px solid white;
+      float: right;
+      .icon-bar{
+        background: white;
+      }
+    }
+    .navbar-brand{
+      float: left;
+    }
+    a{
+      color: white !important;
+      font-size: 24px;
+    }
   }
   .Header__option {
     vertical-align: middle;
   }
   .Header__nav {
     float: right;
+
+    li.active{
+      a{
+        background: transparent !important;
+        border-bottom: 2px solid white;
+      }
+    }
     a{
-      color: white;
+      color: white !important;
       margin-right: 40px;
       padding: 10px 0;
       cursor: pointer;
@@ -24,63 +47,64 @@
       }
     }
     .btn__cta {
-      background: white;
-      color: #4C5A55;
+      background: white !important;
+      color: #4C5A55 !important;
       border-radius: 50px;
       font-weight: bold;
       font-size: 16px;
-      padding: 15px 30px;
+      padding: 15px 40px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      margin-right: 0;
       &:hover{
         box-shadow: 0px -1px 5px (rgba(0, 0, 0, 0.5));
       }
     }
   }
 }
-
-@media only screen and (max-width: 540px) { //iphone6 e Nexus 5
-  .Header {
-    padding: 20px;
-    .Header__nav{
-      float: right;
-      margin-top: 20px;
-        a{
-          color: white;
-          margin: 0 0 0 15px;
-          padding: 0;
-          cursor: pointer;
-          &:hover {
-            border-bottom: 2px solid white;
-            text-decoration: none;
-          }
-        }
-      .btn__cta {
-          display: none;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 320px) { //iphone 5
-  .Header {
-    padding: 10px;
-    .Header__nav{
-      float: right;
-      margin-top: 23px;
-        a{
-          color: white;
-          font-size: 10px;
-          margin: 0 0 0 10px;
-          padding: 0;
-          cursor: pointer;
-          &:hover {
-            border-bottom: 2px solid white;
-            text-decoration: none;
-          }
-        }
-      .btn__cta {
-          display: none;
-      }
-    }
-  }
-}
+//
+// @media only screen and (max-width: 540px) { //iphone6 e Nexus 5
+//   .Header {
+//     padding: 20px;
+//     .Header__nav{
+//       float: right;
+//       margin-top: 20px;
+//         a{
+//           color: white;
+//           margin: 0 0 0 15px;
+//           padding: 0;
+//           cursor: pointer;
+//           &:hover {
+//             border-bottom: 2px solid white;
+//             text-decoration: none;
+//           }
+//         }
+//       .btn__cta {
+//           display: none;
+//       }
+//     }
+//   }
+// }
+//
+// @media only screen and (max-width: 320px) { //iphone 5
+//   .Header {
+//     padding: 10px;
+//     .Header__nav{
+//       float: right;
+//       margin-top: 23px;
+//         a{
+//           color: white;
+//           font-size: 10px;
+//           margin: 0 0 0 10px;
+//           padding: 0;
+//           cursor: pointer;
+//           &:hover {
+//             border-bottom: 2px solid white;
+//             text-decoration: none;
+//           }
+//         }
+//       .btn__cta {
+//           display: none;
+//       }
+//     }
+//   }
+// }
