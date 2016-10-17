@@ -26,16 +26,23 @@ class Editor extends React.Component {
 
   render() {
     const colors = ['#FFB840','#FF925B','#FF695B','#4BBF51','#48B895','#32ACD0','#E461DF','#9C70D4','#5A8EDF'];
+    let image = (
+      <svg>
+        <foreignObject width="100%" height="100%">
+          <Post className="Editor__post col-lg-12"
+                name={this.state.name}
+                post={this.state.post}
+                backgroundColor={this.state.backgroundColor} />
+        </foreignObject>
+      </svg>
+    );
 
     return (
       <div className="Editor">
         <div className="Editor__canvas container">
 
           <div className="col-xs-12 col-lg-4">
-            <Post className="Editor__post col-lg-12"
-                  name={this.state.name}
-                  post={this.state.post}
-                  backgroundColor={this.state.backgroundColor} />
+            {image}
             <div class="clearfix"></div>
             <CirclePicker className="Editor__picker" onChange={this.colorChange.bind(this)} colors={colors}/>
           </div>
