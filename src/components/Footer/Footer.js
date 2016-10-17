@@ -12,7 +12,7 @@ import './Footer.less';
       <div className="Footer">
         <div className="Footer__box container">
           <p className="Footer__title--fb text-left hidden-sm hidden-xs col-md-4">
-            f / avidadequem
+            fb/avidadequem <div className="fb-like" data-href="https://www.facebook.com/avidadequem/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
           </p>
           <a onClick={this.showEditor} className="Footer__title--btn btn btn__cta text-center col-xs-12 col-md-4">
             Compartilhe o Seu
